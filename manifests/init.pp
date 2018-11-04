@@ -37,7 +37,7 @@ class patch (
     mode   => '0750',
   }
 
-  if $manage_package {
+  if $manage_package and ! defined(Package[$package]) {
     package { $package: ensure => $ensure }
   }
 }
