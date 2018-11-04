@@ -39,7 +39,7 @@ define patch::directory (
   }
 
   exec { "apply-${patch_name}.patch":
-    command => "patch --forward --strip ${strip} < ${patch_file}",
+    command => "patch -V never -r - --forward --strip ${strip} < ${patch_file}",
     unless  => "patch --reverse --dry-run --strip ${strip} < ${patch_file}",
     path    => $path,
     cwd     => $cwd,
