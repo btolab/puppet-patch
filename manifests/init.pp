@@ -34,7 +34,7 @@ class patch (
     ensure => $patch_dir_ensure,
     owner  => 'root',
     group  => 'root',
-    mode   => '0640',
+    mode   => '0750',
   }
 
   if $manage_package {
